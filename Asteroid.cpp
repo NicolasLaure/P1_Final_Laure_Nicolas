@@ -1,6 +1,11 @@
 #include "Asteroid.h"
+
+#include <iostream>
+
 #include "Utils.h"
 #include "Constants.h"
+
+using namespace std;
 
 Asteroid::Asteroid()
 {

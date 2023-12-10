@@ -1,5 +1,9 @@
 #include "Bullet.h"
 
+#include <iostream>
+
+using namespace std;
+
 Bullet::Bullet(Vector2 position)
 {
 	this->rect.position = position;

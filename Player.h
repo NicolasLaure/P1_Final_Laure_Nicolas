@@ -1,6 +1,10 @@
 #pragma once
 #include "Entity.h"
 
+#include <vector>
+
+using namespace std; 
+
 class Player : public Entity
 {
 private:

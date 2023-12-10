@@ -1,8 +1,6 @@
 #pragma once
 #include "Utils.h"
 
-#include <vector>
-
 class Entity
 {
 protected:

@@ -1,5 +1,10 @@
 #include "UserInterface.h"
+
+#include <iostream>
+
 #include "Utils.h"
+
+using namespace std;
 
 static const int BORDER_SPACING = 12;
 void UserInterface::Draw(int score, int lives, int activeAsteroids)

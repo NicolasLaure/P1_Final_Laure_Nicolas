@@ -1,6 +1,8 @@
 #include "Game.h"
 
 #include <vector>
+#include <iostream>
+#include <Windows.h>
 
 #include "Player.h"
 #include "Entity.h"

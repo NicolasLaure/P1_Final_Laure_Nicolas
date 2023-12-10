@@ -1,6 +1,12 @@
 #include "Player.h"
+
+#include <iostream>
+#include <conio.h>
+
 #include "Bullet.h"
 #include "Constants.h"
+
+using namespace std;
 
 static float timer = 0;
 

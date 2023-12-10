@@ -1,5 +1,12 @@
 #include "Utils.h"
+
+#include <conio.h>
+#include <Windows.h>
+#include <iostream>
+
 #include "Constants.h"
+
+using namespace std;
 
 bool RectRectCollision(Rect box1, Rect box2)
 {
