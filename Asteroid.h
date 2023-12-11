@@ -2,6 +2,8 @@
 #include "Entity.h"
 class Asteroid : public Entity
 {
+private:
+	static int activeAsteroids;
 public:
 	Asteroid();
 	~Asteroid();
@@ -10,4 +12,5 @@ public:
 	void Draw() override;
 	void UnDraw(bool unDrawActualPos) override;
 	void Move(Directions dir) override;
+	static int GetActiveAsteroids();
 };

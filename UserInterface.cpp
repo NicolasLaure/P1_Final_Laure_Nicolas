@@ -3,11 +3,12 @@
 #include <iostream>
 
 #include "Utils.h"
+#include "Asteroid.h"
 
 using namespace std;
 
 static const int BORDER_SPACING = 12;
-void UserInterface::Draw(int score, int lives, int activeAsteroids)
+void UserInterface::Draw(int score, int lives)
 {
 	SetConsoleCursorPos({ 0, 1 });
 	switch (lives)
@@ -25,7 +26,7 @@ void UserInterface::Draw(int score, int lives, int activeAsteroids)
 		break;
 	}
 	SetConsoleCursorPos({ GetConsoleSize().x / 2 - 4, 1 });
-	cout << "Asteroids:" << activeAsteroids;
+	cout << "Asteroids:" << Asteroid::GetActiveAsteroids();
 	
 	SetConsoleCursorPos({ GetConsoleSize().x - BORDER_SPACING, 1 });
 	cout << "Score:" << score;

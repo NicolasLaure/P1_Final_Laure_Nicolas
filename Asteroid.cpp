@@ -7,8 +7,11 @@
 
 using namespace std;
 
+int Asteroid::activeAsteroids = 0;
+
 Asteroid::Asteroid()
 {
+	activeAsteroids++;
 	rect.height = 4;
 	rect.width = 3;
 	rect.position.x = GetConsoleSize().x - (2 + rect.width);
@@ -18,6 +21,7 @@ Asteroid::Asteroid()
 Asteroid::~Asteroid()
 {
 	UnDraw(true);
+	activeAsteroids--;
 }
 
 void Asteroid::Update()
@@ -73,4 +77,9 @@ void Asteroid::Move(Directions dir)
 		rect.position.x--;
 	else if (rect.position.x - 1 <= 0)
 		shouldDestroy = true;
+}
+
+int Asteroid::GetActiveAsteroids()
+{
+	return activeAsteroids;
 }

@@ -3,7 +3,7 @@ class UserInterface
 {
 public:
 
-	void Draw(int score, int lives, int activeAsteroids);
+	void Draw(int score, int lives);
 	void GameOverDraw();
 	void WinDraw();
 };

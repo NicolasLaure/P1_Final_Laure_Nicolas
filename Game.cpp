@@ -31,7 +31,6 @@ void Game::RunGame()
 
 	timer = clock() + ASTEROID_SPAWN_RATE;
 
-	static int activeAsteroids = 0;
 	bool isRunning = true;
 	while (isRunning)
 	{
@@ -39,7 +38,6 @@ void Game::RunGame()
 		{
 			entities.push_back(new Asteroid());
 			timer = clock() + ASTEROID_SPAWN_RATE;
-			activeAsteroids++;
 		}
 
 		for (int i = 0; i < entities.size(); i++)
@@ -49,7 +47,7 @@ void Game::RunGame()
 			{
 				static_cast<Player*>(entities.at(i))->Update(entities);
 				entities.at(i)->Draw();
-				ui.Draw(score, static_cast<Player*>(entities.at(i))->GetLives(), activeAsteroids);
+				ui.Draw(score, static_cast<Player*>(entities.at(i))->GetLives());
 
 				for (int j = 0; j < entities.size(); j++)
 				{
@@ -84,9 +82,6 @@ void Game::RunGame()
 
 			if (entities.at(i)->GetShouldDestroy())
 			{
-				if (dynamic_cast<Asteroid*>(entities.at(i)) != nullptr)
-					activeAsteroids--;
-
 				Entity* auxPtr = entities.at(i);
 				entities.erase(entities.begin() + i);
 				delete auxPtr;
